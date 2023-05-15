@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "shake-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/shakebugs/shake-ios",
+      "state" : {
+        "revision" : "6acb0a94a1fd0edcabbd96295ef58f6cdc6ae29f",
+        "version" : "15.1.1"
+      }
+    }
+  ],
+  "version" : 2
+}

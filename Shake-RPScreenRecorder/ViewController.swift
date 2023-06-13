@@ -29,13 +29,17 @@ class ViewController: UIViewController {
     private func updateConfLabel() {
         
         //MARK: for Shake 15.1.1
+/*
         self.confLabel.text = "isPaused: " + (Shake.isPaused ? "on" : "off")
-        
+*/
         
         //MARK: for Shake > 16
 /*
-        self.confLabel.text = "isUserFeedbackEnabled: " + (Shake.configuration.isUserFeedbackEnabled ? "on" : "off")
+        self.confLabel.text = "isAutoVideoRecordingEnabled: " + (Shake.configuration.isAutoVideoRecordingEnabled ? "on" : "off")
 */
+        self.confLabel.isHidden = true
+        self.confSwitch.isHidden = true
+
     }
     
     @IBAction func onSwitchValueChanged(_ sender: Any) {
@@ -50,14 +54,14 @@ class ViewController: UIViewController {
         //
         
         //MARK: for Shake 15.1.1
+/*
         Shake.isPaused = self.confSwitch.isOn
+*/
         
         //MARK: for Shake > 16
 /*
-        Shake.configuration.isUserFeedbackEnabled = self.confSwitch.isOn
-        Shake.configuration.isCrashReportingEnabled = self.confSwitch.isOn
+        Shake.configuration.isAutoVideoRecordingEnabled = self.confSwitch.isOn
 */
-        
  
         self.updateConfLabel()
     }

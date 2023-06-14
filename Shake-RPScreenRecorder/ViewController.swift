@@ -34,12 +34,8 @@ class ViewController: UIViewController {
 */
         
         //MARK: for Shake > 16
-/*
-        self.confLabel.text = "isAutoVideoRecordingEnabled: " + (Shake.configuration.isAutoVideoRecordingEnabled ? "on" : "off")
-*/
-        self.confLabel.isHidden = true
-        self.confSwitch.isHidden = true
-
+        
+        self.confLabel.text = "isUserFeedbackEnabled: " + (Shake.configuration.isUserFeedbackEnabled ? "on" : "off")
     }
     
     @IBAction func onSwitchValueChanged(_ sender: Any) {
@@ -59,10 +55,8 @@ class ViewController: UIViewController {
 */
         
         //MARK: for Shake > 16
-/*
-        Shake.configuration.isAutoVideoRecordingEnabled = self.confSwitch.isOn
-*/
- 
+        Shake.configuration.isUserFeedbackEnabled = self.confSwitch.isOn
+        
         self.updateConfLabel()
     }
 }

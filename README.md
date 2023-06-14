@@ -19,3 +19,10 @@ https://github.com/jteyber/issue-Shake-RPScreenRecorder/assets/127939388/c67a2d0
 
 https://github.com/jteyber/issue-Shake-RPScreenRecorder/assets/127939388/abb5c929-b043-4fc3-ae49-441d8fe82e59
 
+## SDK v16.2 using isUserFeedbackEnabled - KO
+
+https://github.com/jteyber/issue-Shake-RPScreenRecorder/assets/127939388/a65d74c9-ed0c-45aa-bab2-279ed15084f7
+
+
+
+

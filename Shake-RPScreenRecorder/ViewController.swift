@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var confLabel: UILabel!
     @IBOutlet weak var confSwitch: UISwitch!
+    @IBOutlet weak var floatingReportButtonShownLabel: UILabel!
+    @IBOutlet weak var floatingReportButtonShownSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +25,16 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.updateConfLabel()
+        self.updateConfLabels()
+        self.updateSwitch()
     }
     
-    private func updateConfLabel() {
+    private func updateSwitch() {
+        self.confSwitch.setOn(Shake.configuration.isUserFeedbackEnabled, animated: true)
+        self.floatingReportButtonShownSwitch.setOn(Shake.configuration.isFloatingReportButtonShown, animated: true)
+    }
+    
+    private func updateConfLabels() {
         
         //MARK: for Shake 15.1.1
 /*
@@ -36,13 +44,11 @@ class ViewController: UIViewController {
         //MARK: for Shake > 16
         
         self.confLabel.text = "isUserFeedbackEnabled: " + (Shake.configuration.isUserFeedbackEnabled ? "on" : "off")
+        self.floatingReportButtonShownLabel.text = "isFloatingReportButtonShown: " + (Shake.configuration.isFloatingReportButtonShown ? "on" : "off")
+        
     }
     
     @IBAction func onSwitchValueChanged(_ sender: Any) {
-        guard (sender as? UISwitch) == self.confSwitch else {
-            return
-        }
-        
         //
         // known limitation :
         // Shake internally uses the native RPScreenRecorder library
@@ -56,7 +62,8 @@ class ViewController: UIViewController {
         
         //MARK: for Shake > 16
         Shake.configuration.isUserFeedbackEnabled = self.confSwitch.isOn
+        Shake.configuration.isFloatingReportButtonShown = self.floatingReportButtonShownSwitch.isOn
         
-        self.updateConfLabel()
+        self.updateConfLabels()
     }
 }
